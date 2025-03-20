@@ -1,12 +1,76 @@
-# React + Vite
+To-Do List App - README
+📌 Project Overview
+This is a simple To-Do List Application built using React. The application allows users to:
+✔️ Add tasks
+✔️ Mark tasks as completed
+✔️ Edit tasks
+✔️ Delete tasks
+✔️ Filter tasks (All, Completed, Pending)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+⚡ Technologies Used
+React (Created with Vite)
+Functional Components & Hooks (useState)
+CSS (For styling)
+🚀 How to Run the Project
+Step 1: Install Node.js (If Not Installed)
+Before running the project, make sure you have Node.js installed on your system.
+🔗 Download Node.js
 
-Currently, two official plugins are available:
+To check if it's installed, run:
+node -v
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Step 2: Clone the Project
+Download or clone this repository using git bash or terminal:
 
-## Expanding the ESLint configuration
+git clone https://github.com/Chandu0807/To-Do-List.git
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Then, move into the project folder:
+cd todo-list-app
+
+Step 3: Install Dependencies
+Run the following command to install required packages:
+npm install
+
+Step 4: Start the Application
+After installation, start the React application using:
+npm run dev
+This will display a local server URL (e.g., http://localhost:5173/).
+Open it in your browser to see the To-Do List App in action! 🎉
+
+🛠 Features
+✅ Add Tasks – Enter a task and click "Add"
+✅ Mark as Completed – Click on a task to toggle completion
+✅ Edit Tasks – Click the ✏️ button to edit a task
+✅ Delete Tasks – Click the ❌ button to remove a task
+✅ Filter Tasks – Use buttons to show All, Completed, or Pending tasks
+
+📂 Project Structure
+css
+Copy
+Edit
+📁 todo-list-app
+│── 📂 src
+│   │── 📂 components
+│   │   ├── Header.jsx
+│   │   ├── ToDoList.jsx
+│   │   ├── ToDoItem.jsx
+│   │── App.jsx
+│   │── main.jsx
+│   │── styles.css
+│── index.html
+│── package.json
+│── README.md  (This file)
+
+Styling
+CSS is used for a professional design.
+The layout is responsive and works on different screen sizes.
+📌 Notes
+If you make changes, restart the app using npm run dev.
+If you face any issues, try running:
+npm install
+npm run dev
+📩 Need Help?
+If you have any issues or suggestions, feel free to contact me on github! or email me at saichandra340@gmail.com 🚀
+
+Happy Coding! 🎉
