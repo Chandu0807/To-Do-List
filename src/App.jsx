@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import ToDoList from "./components/ToDoList";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all"); 
+
+  const addTask = (text) => {
+    if (text.trim() === "") return;
+    const newTask = { id: Date.now(), text, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  const toggleComplete = (id) => {
+    setTasks(tasks.map(task => 
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  };
+
+  const editTask = (id) => {
+    const newText = prompt("Edit your task:");
+    if (newText) {
+      setTasks(tasks.map(task => 
+        task.id === id ? { ...task, text: newText } : task
+      ));
+    }
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+
+  const getFilteredTasks = () => {
+    switch (filter) {
+      case "completed":
+        return tasks.filter(task => task.completed);
+      case "pending":
+        return tasks.filter(task => !task.completed);
+      default:
+        return tasks;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="container">
+      <Header />
+      <div className="input-group">
+        <input id="taskInput" type="text" className="todo-input" placeholder="Add a task..." />
+        <button className="add-btn" onClick={() => {
+          addTask(document.getElementById("taskInput").value);
+          document.getElementById("taskInput").value = ""; 
+        }}>
+          Add
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+      <div className="filter-group">
+        <button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>All</button>
+        <button className={filter === "completed" ? "active" : ""} onClick={() => setFilter("completed")}>Completed</button>
+        <button className={filter === "pending" ? "active" : ""} onClick={() => setFilter("pending")}>Pending</button>
+      </div>
+
+      <ToDoList tasks={getFilteredTasks()} toggleComplete={toggleComplete} editTask={editTask} deleteTask={deleteTask} />
+    </div>
+  );
+};
+
+export default App;

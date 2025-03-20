@@ -1,42 +1,110 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* General Styling */
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Input and Button */
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.add-btn {
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.card {
-  padding: 2em;
+/* Filter Buttons */
+.filter-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.read-the-docs {
-  color: #888;
+.filter-group button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.filter-group button:hover {
+  background: #ccc;
+}
+
+.filter-group button.active {
+  background: #4facfe;
+  color: white;
+  font-weight: bold;
+}
+
+/* To-Do List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  background: #d4edda;
+}
+
+.task-text {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.edit-btn:hover {
+  color: #ff9800;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+/* Empty Message */
+.empty-msg {
+  color: gray;
+  font-style: italic;
 }
