@@ -24,7 +24,6 @@ Download or clone this repository using git bash or terminal:
 
 git clone https://github.com/Chandu0807/To-Do-List.git
 
-
 Then, move into the project folder:
 cd todo-list-app
 
@@ -35,6 +34,7 @@ npm install
 Step 4: Start the Application
 After installation, start the React application using:
 npm run dev
+
 This will display a local server URL (e.g., http://localhost:5173/).
 Open it in your browser to see the To-Do List App in action! 🎉
 
@@ -46,9 +46,6 @@ Open it in your browser to see the To-Do List App in action! 🎉
 ✅ Filter Tasks – Use buttons to show All, Completed, or Pending tasks
 
 📂 Project Structure
-css
-Copy
-Edit
 📁 todo-list-app
 │── 📂 src
 │   │── 📂 components
@@ -57,7 +54,7 @@ Edit
 │   │   ├── ToDoItem.jsx
 │   │── App.jsx
 │   │── main.jsx
-│   │── styles.css
+│   │── App.css
 │── index.html
 │── package.json
 │── README.md  (This file)
@@ -65,6 +62,7 @@ Edit
 Styling
 CSS is used for a professional design.
 The layout is responsive and works on different screen sizes.
+
 📌 Notes
 If you make changes, restart the app using npm run dev.
 If you face any issues, try running:
